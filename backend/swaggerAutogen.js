@@ -42,15 +42,15 @@ const document = {
   security: [{ Token: [] }, { Bearer: [] }],
   definitions: {
     // Models:
-    User: require("./src/models/userModel").schema.obj,
-    Blog: require("./src/models/blogModel").schema.obj,
-    Category: require("./src/models/categoryModel").schema.obj,
-    Comment: require("./src/models/commentModel").schema.obj,
+    User: require("./models/userModel").schema.obj,
+    Blog: require("./models/blogModel").schema.obj,
+    Category: require("./models/categoryModel").schema.obj,
+    Comment: require("./models/commentModel").schema.obj,
   },
 };
 
-const routes = ["index.js"];
-const outputFile = "./src/configs/swagger.json";
+const routes = ["./index.js"];
+const outputFile = "./configs/swagger.json";
 
 // Create JSON file:
 swaggerAutogen(outputFile, routes, document);
